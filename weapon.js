@@ -71,6 +71,11 @@ function loadWeapon(weaponType) {
     loader.load(
         weaponFile,
         function (gltf) {
+            // Verwijder eventueel model dat tussendoor geladen is
+            if (object) {
+                scene.remove(object);
+                object = null;
+            }
             object = gltf.scene;
             object.traverse((child) => {
                 if (child.isMesh) {
@@ -97,11 +102,6 @@ loadWeapon(objTorender);
 // Listen for weapon changes
 window.addEventListener('weaponChange', (e) => {
     const newWeapon = e.detail.weapon;
-
-    if (object) {
-        scene.remove(object);
-        object = null;
-    }
 
     // Reset rotatie bij wapenwisseling
     isRotating = false;
