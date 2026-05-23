@@ -16,9 +16,9 @@ let autoRotationY = Math.PI / 2;
 let rotationTimeout = null;
 
 const weaponFiles = {
-    sword: "../3D/sword.glb",
-    hellebaard: "../3D/Hellebaard.glb",
-    morgenster: "../3D/Morgenster.glb"
+    sword: "./3D/sword.glb",
+    hellebaard: "./3D/Hellebaard.glb",
+    morgenster: "./3D/Morgenster.glb"
 };
 
 const cameraDistance = {
